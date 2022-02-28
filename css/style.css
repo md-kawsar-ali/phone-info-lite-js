@@ -23,6 +23,13 @@ body {
     border-radius: 0;
 }
 
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+    pointer-events: none;
+    opacity: 1;
+}
+
 .btn-check:focus + .btn,
 .btn:focus {
     box-shadow: none;
@@ -45,7 +52,7 @@ body {
             Header Section
 ====================================== */
 header {
-    min-height: 400px;
+    min-height: 380px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -55,6 +62,7 @@ header h1 {
     font-size: 3rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
     margin-bottom: 15px;
 }
 
@@ -77,20 +85,59 @@ header .input-group {
     box-shadow: 0px 0px 30px rgba(29, 51, 95, 0.1);
 }
 
+.card figure {
+    margin: 0;
+    text-align: center;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.card figure:hover {
+    background: #f1f1f1;
+}
+
 .card img {
-    border-radius: 10px;
+    border-radius: 5px;
+    height: 170px;
+    width: auto;
+}
+
+.card .d-flex {
+    flex-wrap: wrap;
 }
 
 .card-title {
     color: #1d335f;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.card-title:hover {
+    color: #94bbe9;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .card-body {
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
+}
+
+.card h6 {
+    color: #1d335f;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
 }
 
 .card .theme-btn {
@@ -134,5 +181,14 @@ footer p {
     }
     .search-result {
         padding: 50px 15px;
+    }
+    .card img {
+        height: 135px;
+    }
+    .card-title {
+        margin-bottom: 10px;
+    }
+    .d-flex {
+        flex-direction: column;
     }
 }

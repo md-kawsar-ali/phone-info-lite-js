@@ -22,11 +22,12 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-8">
                     <h1>Find Your Phone Info</h1>
-                    <div class="input-group">
+                    <form class="input-group">
                         <input type="text" id="search-input" class="form-control" placeholder="Search Here"
-                            aria-label="Search Here" aria-describedby="search-btn">
-                        <button class="btn theme-btn" type="button" id="search-btn">Search</button>
-                    </div>
+                            aria-label="Search Here" aria-describedby="search-btn" autocomplete="off">
+                        <button class="btn theme-btn" type="submit" id="search-btn">Search</button>
+                    </form>
+                    <div class="message mt-3" style="height: 30px"></div>
                 </div>
             </div>
         </div>
@@ -35,78 +36,8 @@
     <main class="container">
         <!-- === Search Result === -->
         <section class="search-result">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="img/placeholder.png" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <button class="btn theme-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="result-wrapper" class="row g-4">
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="img/placeholder.png" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <button class="btn theme-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="img/placeholder.png" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <button class="btn theme-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="img/placeholder.png" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <button class="btn theme-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="img/placeholder.png" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <button class="btn theme-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <img src="img/placeholder.png" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <button class="btn theme-btn">View Details</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
