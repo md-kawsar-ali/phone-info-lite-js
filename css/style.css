@@ -64,6 +64,55 @@ header .input-group {
 }
 
 /* ====================================
+         Search Result Section
+====================================== */
+.search-result {
+    padding: 100px 0;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0px 0px 30px rgba(29, 51, 95, 0.1);
+}
+
+.card img {
+    border-radius: 10px;
+}
+
+.card-title {
+    color: #1d335f;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.card .theme-btn {
+    border-radius: 6px;
+}
+
+/* ====================================
+            Footer Section
+====================================== */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #1d335f;
+}
+
+footer p {
+    color: #ececec;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+/* ====================================
             Responsive Style
 ====================================== */
 @media screen and (max-width: 600px) {
@@ -82,5 +131,8 @@ header .input-group {
     header .input-group {
         width: 265px;
         margin: auto;
+    }
+    .search-result {
+        padding: 50px 15px;
     }
 }
