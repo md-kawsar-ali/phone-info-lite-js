@@ -3,6 +3,7 @@ const resultWrapper = document.getElementById('result-wrapper');
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
 const msgField = document.querySelector('.message');
+const showAllBtn = document.getElementById('show-all');
 
 // Fetch API
 const fetchAPI = async text => {
@@ -20,14 +21,13 @@ const fetchAPI = async text => {
     spinner(false); // Hide Spinner
 }
 
-// Call Popular Phones (Default for Display)
+// Call Popular IPhones (Default)
 fetchAPI('iphone');
 
 // Display Results
 const displayResult = data => {
     removeAllChildNodes(resultWrapper); // Remove Previous Results
-
-    data?.map(phone => {
+    data?.map((phone, index) => {
         const { image, phone_name, brand, slug } = phone;
 
         const div = document.createElement('div');
@@ -47,7 +47,19 @@ const displayResult = data => {
             </div>
         `;
         resultWrapper.appendChild(div);
+
+        // Hide Extra Elements
+        if (index >= 12) {
+            div.classList.add('d-none');
+        }
     });
+
+    // Display Show All Button
+    if (data.length >= 12) {
+        showAllBtn.classList.remove('d-none');
+    } else {
+        showAllBtn.classList.add('d-none');
+    }
 }
 
 // Search Phone
@@ -99,3 +111,12 @@ const alertMsg = (msg = '') => {
         msgField.innerHTML = '';
     }
 }
+
+// Show All Hidden Elements
+showAllBtn.addEventListener('click', event => {
+    const hiddenElement = document.getElementsByClassName('d-none');
+    while (hiddenElement[0]) {
+        hiddenElement[0].classList.remove('d-none');
+    }
+    event.target.classList.add('d-none');
+});
