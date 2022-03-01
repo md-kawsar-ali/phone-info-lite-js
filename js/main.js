@@ -1,4 +1,5 @@
 // Retrieve Html Elements
+const headerHeight = document.getElementById('header').offsetHeight;
 const resultWrapper = document.getElementById('result-wrapper');
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
@@ -26,7 +27,12 @@ fetchAPI('iphone');
 
 // Display Results
 const displayResult = data => {
-    removeAllChildNodes(resultWrapper); // Remove Previous Results
+    // Remove Previous Results
+    if (searching) {
+        removeAllChildNodes(resultWrapper);
+    }
+
+    // Get All Phones
     data?.map((phone, index) => {
         const { image, phone_name, brand, slug } = phone;
 
@@ -59,6 +65,11 @@ const displayResult = data => {
         showAllBtn.classList.remove('d-none');
     } else {
         showAllBtn.classList.add('d-none');
+    }
+
+    // Scroll Down to Results
+    if (searching) {
+        scrollDown();
     }
 }
 
@@ -112,12 +123,18 @@ const loadDetails = async slug => {
         singleUsb.innerText = USB;
     }
 
-    // Hide Preloader
-    modalPreloader.style.opacity = '0';
-    modalPreloader.style.display = 'none';
+    // Hide Preloader (Added setTimeout to make Preloader Smooth)
+    setTimeout(() => {
+        modalPreloader.style.opacity = '0';
+
+        setTimeout(() => {
+            modalPreloader.style.display = 'none';
+        }, 300);
+    }, 500);
 }
 
 // Search Phone
+let searching = false;
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
     const searchText = searchInput.value;
@@ -126,11 +143,21 @@ searchBtn.addEventListener('click', function (event) {
     if (trimSearch.length > 0) {
         spinner(); // Show Spinner
         fetchAPI(`${trimSearch}`);
+        searching = true;
     } else {
         alertMsg('Invalid Search Input!');
     }
     searchInput.value = ''; // Clear Search Input
 });
+
+// Scroll Down to Results after Succesfull Search
+const scrollDown = () => {
+    window.scroll({
+        top: headerHeight,
+        left: 0,
+        behavior: 'smooth'
+    });
+}
 
 // Remove Previous Results
 function removeAllChildNodes(parent) {

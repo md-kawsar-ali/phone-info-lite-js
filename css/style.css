@@ -4,6 +4,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 .bg-color {
@@ -228,6 +229,7 @@ header .input-group {
     background: #ffffff;
     border-radius: 1rem;
     display: none;
+    transition: all 0.3s linear;
 }
 
 .preloader .spinner-border {
