@@ -32,6 +32,7 @@
             </div>
         </div>
     </header>
+
     <!--===== Main Section =====-->
     <main class="container">
         <!-- === Search Result === -->
@@ -41,7 +42,61 @@
             <!-- Show All Button -->
             <button id="show-all" class="btn theme-btn mt-4 d-none">Show All</button>
         </section>
+
+        <!--===== Phone Details (Modal) =====-->
+        <div class="modal fade" id="phoneDetails" tabindex="-1" aria-labelledby="phoneDetailsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="phoneDetailsLabel"><span id="name"></span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <figure>
+                            <img id="image" src="" alt="">
+                        </figure>
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <p><strong>Brand:</strong> <span id="brand"></span></p>
+                                    <p id="released"></p>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <p><strong>Storage:</strong> <span id="storage"></span></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><strong>Display:</strong> <span id="display"></span></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><strong>Chipset:</strong> <span id="chipset"></span></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><strong>Memory:</strong> <span id="memory"></span></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><strong>Sensors:</strong> <span id="sensors"></span></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><strong>WLAN:</strong> <span id="wlan"></span></p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p><strong>USB:</strong> <span id="usb"></span></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--=== Preloader ===-->
+                    <div class="preloader">
+                        <span class="spinner-border spinner-border-md" role="status" aria-hidden="true"></span>
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
     <!--===== Footer Section =====-->
     <footer>
         <p>&copy; 2022. All rights reserved</p>

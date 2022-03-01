@@ -3,6 +3,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
 }
 
 .bg-color {
@@ -76,6 +77,7 @@ header .input-group {
 ====================================== */
 .search-result {
     padding: 100px 0;
+    min-height: 300px;
 }
 
 .card {
@@ -145,6 +147,95 @@ header .input-group {
 }
 
 /* ====================================
+          Phone Details Section
+====================================== */
+.modal-content {
+    background-color: #fff;
+    border: none;
+    border-radius: 1rem;
+}
+
+.modal-header {
+    padding: 1.25rem 1.5rem 1rem;
+    border-bottom: none;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.modal-header .modal-title {
+    color: #1d335f;
+}
+
+.btn-close:focus {
+    box-shadow: none;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0 1.5rem 1.25rem;
+}
+
+.modal-content figure {
+    background: radial-gradient(white, #f5f5f5);
+    margin: 0;
+    padding: 30px;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.modal-content .card {
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    margin-top: 10px;
+}
+
+.modal-content .list-group-item {
+    color: #454545;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    text-decoration: none;
+    background-color: transparent;
+    border-color: #e9ecef;
+}
+
+.modal-content .list-group-item p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.modal-content .list-group-item p strong {
+    font-weight: 600;
+}
+
+.modal-content .list-group-item:last-child {
+    padding-bottom: 0;
+}
+
+.preloader {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 1rem;
+    display: none;
+}
+
+.preloader .spinner-border {
+    border: 0.25em solid #1d335f;
+    border-right-color: #dbdbdb;
+}
+
+/* ====================================
             Footer Section
 ====================================== */
 footer {
@@ -189,6 +280,9 @@ footer p {
         margin-bottom: 10px;
     }
     .d-flex {
+        flex-direction: column;
+    }
+    .modal-content .list-group-item {
         flex-direction: column;
     }
 }
